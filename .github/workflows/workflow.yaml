@@ -10,6 +10,7 @@ jobs:
         run: |
           cd / && ./ros_entrypoint.sh
           apt-get update
+          apt-get install -y ros-melodic-catkin python-catkin-tools
           apt-get install -y ros-melodic-rospy-tutorials
           apt-get install -y ros-melodic-roslint
 
