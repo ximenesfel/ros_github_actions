@@ -24,7 +24,7 @@ jobs:
         run: |
           cd ~/catkin_ws
           cp -r $GITHUB_WORKSPACE .
-          /bin/bash -c "source ../devel/setup.bash && catkin_make"
+          /bin/bash -c "source devel/setup.bash && catkin_make"
 
       - name: Unit tests
         run: |
