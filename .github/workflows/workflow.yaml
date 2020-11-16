@@ -29,4 +29,6 @@ jobs:
       - name: Lint
         run: |
           cd ~/catkin_ws/src
-          catkin build --catkin-make-args roslint
+          catkin build my_robot_bringup --catkin-make-args roslint
+          catkin build my_robot_msgs --catkin-make-args roslint
+          catkin build my_robot_tutorials --catkin-make-args roslint
