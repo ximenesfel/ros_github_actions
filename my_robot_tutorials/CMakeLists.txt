@@ -220,4 +220,4 @@ target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
 # endif()
 
 ## Add folders to be run by python nosetests
-# catkin_add_nosetests(test)
+catkin_add_nosetests(test/test_code.py)
