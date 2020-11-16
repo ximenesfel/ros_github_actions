@@ -25,10 +25,3 @@ jobs:
           cd ~/catkin_ws/src
           cp -r $GITHUB_WORKSPACE .
           /bin/bash -c "source ../devel/setup.bash && catkin build"
-
-      - name: Lint
-        run: |
-          cd ~/catkin_ws/src
-          catkin build my_robot_bringup --catkin-make-args roslint
-          catkin build my_robot_msgs --catkin-make-args roslint
-          catkin build my_robot_tutorials --catkin-make-args roslint
