@@ -22,9 +22,10 @@ jobs:
           
       - name: Build package
         run: |
+          echo $GITHUB_WORKSPACE
           cd ~/catkin_ws/src
           cp -r $GITHUB_WORKSPACE .
-          /bin/bash -c "source ../devel/setup.bash && catkin_make"
+          /bin/bash -c "source ~/catkin_ws/devel/setup.bash && catkin_make"
 
       - name: Unit tests
         run: |
