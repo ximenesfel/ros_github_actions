@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-18.04
     container: ros:melodic-ros-base
     steps:
+      - uses: actions/checkout@v1
       - name: Install catkin & package dependencies
         run: |
           cd / && ./ros_entrypoint.sh
@@ -19,13 +20,11 @@ jobs:
           cd ~/catkin_ws
           /bin/bash -c "source /opt/ros/melodic/setup.bash && catkin_make"
 
-      - uses: actions/checkout@v2
-        with:
-          path: ~/catkin_ws/src
-
       - name: Build package
         run: |
           cd ~/catkin_ws
+          cd src
+          cp -r $GITHUB_WORKSPACE .
           /bin/bash -c "source ~/catkin_ws/devel/setup.bash && catkin_make"
 
       - name: Unit tests
