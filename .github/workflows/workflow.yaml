@@ -24,6 +24,7 @@ jobs:
           cd ~/catkin_ws/src
           cp -r $GITHUB_WORKSPACE .
           cd ~/catkin_ws
+          rosdep update
           rosdep install --from-paths src --ignore-src -r -y
           /bin/bash -c "source /opt/ros/melodic/setup.bash && catkin_make run_tests -DENABLE_COVERAGE_TESTING=ON"
 
