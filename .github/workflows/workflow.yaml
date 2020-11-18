@@ -17,7 +17,7 @@ jobs:
         run: |
           mkdir -p ~/catkin_ws/src
           cd ~/catkin_ws
-          /bin/bash -c "source /opt/ros/melodic/setup.bash && catkin build"
+          /bin/bash -c "source /opt/ros/melodic/setup.bash && catkin_make"
 
       - name: Build package and run unit test
         run: |
