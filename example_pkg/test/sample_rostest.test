@@ -1,0 +1,9 @@
+<launch>
+
+    <arg name="coverage" default="false"/>
+    <arg name="pythontest_launch_prefix" value="$(eval 'python-coverage run -p' if arg('coverage') else '')"/>
+
+    <test time-limit="10" test-name="sample_rostest" pkg="example_pkg" type="sample_rostest.py"
+          launch-prefix="$(arg pythontest_launch_prefix)" />
+
+</launch>
