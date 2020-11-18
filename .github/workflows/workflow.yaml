@@ -10,6 +10,7 @@ jobs:
         run: |
           cd / && ./ros_entrypoint.sh
           apt-get update
+          apt-get install -y  python-catkin-tools
           apt-get install -y ros-melodic-code-coverage
 
       - name: Setup catkin workspace
@@ -29,6 +30,6 @@ jobs:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           fail_ci_if_error: true
           directory: ~/.ros
