@@ -22,6 +22,7 @@ jobs:
         run: |
           apt-get install -y ros-melodic-code-coverage git
           pip3 install codecov
+          pip3 install coverage
           cd ~/catkin_ws/src
           cp -r $GITHUB_WORKSPACE .
           cd ~/catkin_ws
