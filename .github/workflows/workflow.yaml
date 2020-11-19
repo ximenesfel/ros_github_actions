@@ -27,7 +27,6 @@ jobs:
           rosdep update
           rosdep install --from-paths src --ignore-src -r -y
           /bin/bash -c "source /opt/ros/melodic/setup.bash && catkin_make run_tests -DENABLE_COVERAGE_TESTING=ON"
-          python-coverage combine ~/.ros
           find / -name .coverage*
           ls -la ~/.ros
 
@@ -35,4 +34,4 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          directory: ~/.ros
+          directory: ~/catkin_ws
