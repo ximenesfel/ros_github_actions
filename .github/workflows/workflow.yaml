@@ -20,7 +20,7 @@ jobs:
 
       - name: Build package and run unit test
         run: |
-          apt-get install -y ros-melodic-code-coverage
+          apt-get install -y ros-melodic-code-coverage git
           pip3 install codecov
           cd ~/catkin_ws/src
           cp -r $GITHUB_WORKSPACE .
@@ -30,7 +30,7 @@ jobs:
           /bin/bash -c "source /opt/ros/melodic/setup.bash && catkin_make run_tests -DENABLE_COVERAGE_TESTING=ON"
           find / -name .coverage*
           ls -la ~/.ros
-          codecov -t ${{ secrets.CODECOV_TOKEN }}
+          codecov -t ${{ secrets.CODECOV_TOKEN }} --root ~/.ros
 
       # - name: Upload coverage to Codecov
       #   uses: codecov/codecov-action@v1
