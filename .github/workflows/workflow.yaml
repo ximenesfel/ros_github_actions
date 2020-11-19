@@ -32,8 +32,11 @@ jobs:
           find / -name .coverage*
           ls -la ~/.ros
           cp ~/.ros/.coverage* ~/catkin_ws
+          ls -la ~/catkin_ws
           cd ~/catkin_ws
-          coverage xml
+          python-coverage combine
+          python-coverage xml
+          cd ~/catkin_ws
           codecov -t ${{ secrets.CODECOV_TOKEN }}
 
       # - name: Upload coverage to Codecov
