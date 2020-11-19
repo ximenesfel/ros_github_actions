@@ -10,9 +10,7 @@ jobs:
         run: |
           cd / && ./ros_entrypoint.sh
           apt-get update
-          apt-get install -y python-catkin-tools curl  python3-pip
-          apt-get install -y ros-melodic-code-coverage
-          pip3 install coverage
+          apt-get install -y python-catkin-tools curl
 
       - name: Setup catkin workspace
         run: |
@@ -22,6 +20,7 @@ jobs:
 
       - name: Build package and run unit test
         run: |
+          apt-get install -y ros-melodic-code-coverage
           cd ~/catkin_ws/src
           cp -r $GITHUB_WORKSPACE .
           cd ~/catkin_ws
