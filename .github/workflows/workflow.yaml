@@ -30,7 +30,8 @@ jobs:
           /bin/bash -c "source /opt/ros/melodic/setup.bash && catkin_make run_tests -DENABLE_COVERAGE_TESTING=ON"
           find / -name .coverage*
           ls -la ~/.ros
-          codecov -t ${{ secrets.CODECOV_TOKEN }} --root ~/.ros
+          cp ~/.ros/.coverage* ~/catkin_ws
+          codecov -t ${{ secrets.CODECOV_TOKEN }}
 
       # - name: Upload coverage to Codecov
       #   uses: codecov/codecov-action@v1
