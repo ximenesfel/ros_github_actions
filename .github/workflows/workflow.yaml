@@ -32,6 +32,7 @@ jobs:
           cp ~/.ros/.coverage* ~/catkin_ws
           cd ~/catkin_ws
           python-coverage combine
+          python-coverage xml
           /bin/bash -c "bash <(curl -s https://codecov.io/bash) -s ~/catkin_ws"
 
       - name: Upload coverage to Codecov
