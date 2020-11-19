@@ -29,11 +29,11 @@ jobs:
           rosdep update
           rosdep install --from-paths src --ignore-src -r -y
           /bin/bash -c "source /opt/ros/melodic/setup.bash && catkin_make run_tests_example_pkg -DENABLE_COVERAGE_TESTING=ON"
-          cp ~/.ros/.coverage* ~/catkin_ws
-          cd ~/catkin_ws
+          # cp ~/.ros/.coverage* ~/catkin_ws
+          # cd ~/catkin_ws
           # python-coverage combine
           # python-coverage xml
-          /bin/bash -c "bash <(curl -s https://codecov.io/bash) -s ~/catkin_ws"
+          /bin/bash -c "bash <(curl -s https://codecov.io/bash) -s ~/.ros"
 
       # - name: Upload coverage to Codecov
       #   uses: codecov/codecov-action@v1
