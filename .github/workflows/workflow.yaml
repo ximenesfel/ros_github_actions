@@ -30,7 +30,7 @@ jobs:
           find / -name .coverage*
           ls -la ~/.ros
           cd ~/.ros
-          /bin/bash -c "bash <(curl -s https://codecov.io/bash)"
+          /bin/bash -c "bash <(curl -s https://codecov.io/bash) -s ~/.ros"
 
       # - name: Upload coverage to Codecov
       #   uses: codecov/codecov-action@v1
