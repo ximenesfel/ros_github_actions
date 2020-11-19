@@ -33,7 +33,7 @@ jobs:
           # cd ~/catkin_ws
           # python-coverage combine
           # python-coverage xml
-          /bin/bash -c "bash <(curl -s https://codecov.io/bash)"
+          /bin/bash -c "bash <(curl -s https://codecov.io/bash) -s ~/catkin_ws"
 
       # - name: Upload coverage to Codecov
       #   uses: codecov/codecov-action@v1
