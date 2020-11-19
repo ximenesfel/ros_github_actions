@@ -30,8 +30,9 @@ jobs:
           rosdep install --from-paths src --ignore-src -r -y
           /bin/bash -c "source /opt/ros/melodic/setup.bash && catkin_make run_tests_example_pkg -DENABLE_COVERAGE_TESTING=ON"
           cp ~/.ros/.coverage* ~/catkin_ws
-          # cd ~/catkin_ws
-          python-coverage combine ~/catkin_ws
+          cd ~/catkin_ws
+          python-coverage combine
+          ls -la ~/catkin_ws
           # python-coverage xml
 
       - name: Upload coverage to Codecov
