@@ -29,7 +29,8 @@ jobs:
           /bin/bash -c "source /opt/ros/melodic/setup.bash && catkin_make run_tests -DENABLE_COVERAGE_TESTING=ON"
           find / -name .coverage*
           ls -la ~/.ros
-          bash <(curl -s https://codecov.io/bash) -s ~/.ros
+          cd ~/.ros
+          bash <(curl -s https://codecov.io/bash)
 
       # - name: Upload coverage to Codecov
       #   uses: codecov/codecov-action@v1
